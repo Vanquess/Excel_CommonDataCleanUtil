@@ -10,8 +10,8 @@ import com.xsx.data.clean.jframe.MainForm;
 public class MainProgram {
 
     public static void main(String[] args) {
+        // 主程序
         new MainForm();
-
     }
 
 

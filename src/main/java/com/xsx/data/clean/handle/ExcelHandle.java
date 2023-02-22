@@ -3,11 +3,9 @@ package com.xsx.data.clean.handle;
 import cn.hutool.core.util.StrUtil;
 import com.xsx.data.clean.bean.CommonValueBean;
 import com.xsx.data.clean.util.LetterToNumUtil;
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -43,8 +41,8 @@ public class ExcelHandle {
                     HSSFRow row = sheet.getRow(i);
                     XSSFRow outRow_ = outSheet.createRow(i - startRowNum);
                     for (CommonValueBean bean : values) {
-                        HSSFCell cell = row.getCell(LetterToNumUtil.calcLetterToNum(bean.getSource()));
-                        outRow_.createCell(LetterToNumUtil.calcLetterToNum(bean.getTarget())).setCellValue(cell != null ? cell.getStringCellValue() : "");
+                        String cellValue = MathCalculateHandle.HSSFCellCalculate(bean.getSource(), row);
+                        outRow_.createCell(LetterToNumUtil.calcLetterToNum(bean.getTarget())).setCellValue(cellValue);
                     }
                 }
             } else if ("xlsx".equals(suffix)) {
@@ -55,8 +53,8 @@ public class ExcelHandle {
                     XSSFRow row = sheet.getRow(i);
                     XSSFRow outRow_ = outSheet.createRow(i - startRowNum);
                     for (CommonValueBean bean : values) {
-                        XSSFCell cell = row.getCell(LetterToNumUtil.calcLetterToNum(bean.getSource()));
-                        outRow_.createCell(LetterToNumUtil.calcLetterToNum(bean.getTarget())).setCellValue(cell != null ? cell.getStringCellValue() : "");
+                        String cellValue = MathCalculateHandle.XSSFCellCalculate(bean.getSource(), row);
+                        outRow_.createCell(LetterToNumUtil.calcLetterToNum(bean.getTarget())).setCellValue(cellValue);
                     }
                 }
             }
