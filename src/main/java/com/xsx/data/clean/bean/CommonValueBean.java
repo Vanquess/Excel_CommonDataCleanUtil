@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * @Author BKGin
- * @Email xushengxing@gmail.com
+ * @Email libra14xu@gmail.com
  * @Date 2023-02-20
  */
 @Data

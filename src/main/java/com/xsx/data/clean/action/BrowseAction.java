@@ -9,10 +9,11 @@ import java.awt.event.ActionListener;
 
 /**
  * @Author BKGin
- * @Email xushengxing@gmail.com
+ * @Email libra14xu@gmail.com
  * @Date 2023-02-20
  */
 public class BrowseAction implements ActionListener {
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(MainForm.templateBrowseButton)) {

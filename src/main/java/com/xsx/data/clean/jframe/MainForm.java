@@ -8,7 +8,7 @@ import java.awt.*;
 
 /**
  * @Author BKGin
- * @Email xushengxing@gmail.com
+ * @Email libra14xu@gmail.com
  * @Date 2023-02-20
  */
 public class MainForm extends JFrame {
