@@ -36,11 +36,10 @@ public class MathCalculateHandle {
                 String cellValue = (cell != null && StrUtil.isNotEmpty(cell.getStringCellValue())) ? cell.getStringCellValue() : "";
                 // 替换
                 expression = expression.replace(letter, cellValue);
-                expression_ = expression_.replace(letter, cellValue);
             }
         }
         Pattern pattern = Pattern.compile("[0-9]*");
-        if (pattern.matcher(expression_.replaceAll("\\,|\\.", "")).matches()) {
+        if (pattern.matcher(expression.replaceAll(" |\\(|\\)|\\+|\\-|\\*|\\/|\\,|\\.", "")).matches()) {
             // 纯数字字符串
             // 计算
             ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("JavaScript");
@@ -67,11 +66,10 @@ public class MathCalculateHandle {
                 String cellValue = (cell != null && StrUtil.isNotEmpty(cell.getStringCellValue())) ? cell.getStringCellValue() : "";
                 // 替换
                 expression = expression.replace(letter, cellValue);
-                expression_ = expression_.replace(letter, cellValue);
             }
         }
         Pattern pattern = Pattern.compile("[0-9]*");
-        if (pattern.matcher(expression_.replaceAll("\\,|\\.", "")).matches()) {
+        if (pattern.matcher(expression.replaceAll(" |\\(|\\)|\\+|\\-|\\*|\\/|\\,|\\.", "")).matches()) {
             // 纯数字字符串
             // 计算
             ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("JavaScript");
